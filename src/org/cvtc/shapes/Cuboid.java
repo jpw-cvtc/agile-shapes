@@ -8,7 +8,7 @@ public class Cuboid extends Shape {
 	private float height = 0.0f;
 	private float depth = 0.0f;
 	
-	public Cuboid(final float width, final float height, final float depth) {
+	public Cuboid(final float width, final float height, final float depth) throws IllegalArgumentException {
 		setWidth(width);
 		setHeight(height);
 		setDepth(depth);
@@ -19,8 +19,11 @@ public class Cuboid extends Shape {
 	}
 
 
-	private void setWidth(final float width) {
-		this.width = setValueGreaterThanZeroOrZero(width);
+	private void setWidth(final float width) throws IllegalArgumentException {
+		if (!isValueGreaterThanZero(width)) {
+			throw new IllegalArgumentException();
+		}
+		this.width = width;
 	}
 
 	public float getHeight() {
@@ -28,8 +31,11 @@ public class Cuboid extends Shape {
 	}
 
 
-	private void setHeight(final float height) {
-		this.height = setValueGreaterThanZeroOrZero(height);
+	private void setHeight(final float height) throws IllegalArgumentException {
+		if (!isValueGreaterThanZero(height)) {
+			throw new IllegalArgumentException();
+		}
+		this.height = height;
 	}
 
 
@@ -38,8 +44,11 @@ public class Cuboid extends Shape {
 	}
 
 
-	private void setDepth(final float depth) {
-		this.depth = setValueGreaterThanZeroOrZero(depth);
+	private void setDepth(final float depth) throws IllegalArgumentException {
+		if (!isValueGreaterThanZero(depth)) {
+			throw new IllegalArgumentException();
+		}
+		this.depth = depth;
 	}
 
 	@Override

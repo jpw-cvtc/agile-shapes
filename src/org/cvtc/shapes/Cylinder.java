@@ -7,7 +7,7 @@ public class Cylinder extends Shape {
 	private float radius = 0.0f;
 	private float height = 0.0f;
 	
-	public Cylinder(final float radius, final float height) {
+	public Cylinder(final float radius, final float height) throws IllegalArgumentException {
 		setRadius(radius);
 		setHeight(height);
 	}
@@ -16,16 +16,22 @@ public class Cylinder extends Shape {
 		return radius;
 	}
 
-	private void setRadius(float radius) {
-		this.radius = setValueGreaterThanZeroOrZero(radius);
+	private void setRadius(float radius) throws IllegalArgumentException {
+		if (!isValueGreaterThanZero(radius)) {
+			throw new IllegalArgumentException();
+		}
+		this.radius = radius;
 	}
 
 	public float getHeight() {
 		return height;
 	}
 
-	private void setHeight(float height) {
-		this.height = setValueGreaterThanZeroOrZero(height);
+	private void setHeight(float height) throws IllegalArgumentException {
+		if (!isValueGreaterThanZero(height)) {
+			throw new IllegalArgumentException();
+		}
+		this.height = height;
 	}
 
 	@Override

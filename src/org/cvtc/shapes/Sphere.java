@@ -6,7 +6,7 @@ public class Sphere extends Shape {
 
 	private float radius = 0.0f;
 	
-	public Sphere(final float radius) {
+	public Sphere(final float radius) throws IllegalArgumentException {
 		setRadius(radius);
 	}
 	
@@ -15,7 +15,10 @@ public class Sphere extends Shape {
 	}
 
 	private void setRadius(float radius) {
-		this.radius = setValueGreaterThanZeroOrZero(radius);
+		if (!isValueGreaterThanZero(radius)) {
+			throw new IllegalArgumentException();
+		}
+		this.radius = radius;
 	}
 
 	@Override
@@ -25,7 +28,7 @@ public class Sphere extends Shape {
 	
 	@Override
 	public float volume() {
-		return (float) ((4 * Math.PI * Math.pow(radius, 3)) / 3);
+		return (float) ((4.0 / 3.0 ) * Math.PI * Math.pow(radius, 3 ));
 	}
 
 	@Override
