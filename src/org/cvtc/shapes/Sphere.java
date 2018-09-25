@@ -1,12 +1,11 @@
 package org.cvtc.shapes;
 
-import javax.swing.JOptionPane;
-
-public class Sphere extends Shape {
+public class Sphere extends Shape implements Renderer {
 
 	private float radius = 0.0f;
 	
-	public Sphere(final float radius) throws IllegalArgumentException {
+	public Sphere(Dialog messageBox, final float radius) throws IllegalArgumentException {
+		super(messageBox);
 		setRadius(radius);
 	}
 	
@@ -33,7 +32,7 @@ public class Sphere extends Shape {
 
 	@Override
 	public void render() {
-		JOptionPane.showMessageDialog(null, this.toString(), "Sphere", JOptionPane.INFORMATION_MESSAGE);
+		getMessageBox().show(this.toString(), "Sphere");
 	}
 	
 	@Override

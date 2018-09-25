@@ -1,14 +1,13 @@
 package org.cvtc.shapes;
 
-import javax.swing.JOptionPane;
-
-public class Cuboid extends Shape {
+public class Cuboid extends Shape implements Renderer {
 
 	private float width = 0.0f;
 	private float height = 0.0f;
 	private float depth = 0.0f;
 	
-	public Cuboid(final float width, final float height, final float depth) throws IllegalArgumentException {
+	public Cuboid(Dialog messageBox, final float width, final float height, final float depth) throws IllegalArgumentException {
+		super(messageBox);
 		setWidth(width);
 		setHeight(height);
 		setDepth(depth);
@@ -63,7 +62,7 @@ public class Cuboid extends Shape {
 
 	@Override
 	public void render() {
-		JOptionPane.showMessageDialog(null, this.toString(), "Cuboid", JOptionPane.INFORMATION_MESSAGE);
+		getMessageBox().show(this.toString(), "Cuboid");
 	}
 	
 	@Override

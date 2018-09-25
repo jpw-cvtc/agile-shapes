@@ -4,9 +4,9 @@ public class ShapesTest {
 
 	public static void main(String[] args) {
 		
-		Cuboid cuboid = new Cuboid(1, 2, 3);
-		Cylinder cylinder = new Cylinder(1, 2);
-		Sphere sphere = new Sphere(1);
+		Renderer cuboid = new Cuboid(new MessageBox(), 1, 2, 3);
+		Renderer cylinder = new Cylinder(new MessageBox(), 1, 2);
+		Renderer sphere = new Sphere(new MessageBox(), 1);
 		
 		cuboid.render();
 		cylinder.render();

@@ -1,13 +1,12 @@
 package org.cvtc.shapes;
 
-import javax.swing.JOptionPane;
-
-public class Cylinder extends Shape {
+public class Cylinder extends Shape implements Renderer {
 	
 	private float radius = 0.0f;
 	private float height = 0.0f;
 	
-	public Cylinder(final float radius, final float height) throws IllegalArgumentException {
+	public Cylinder(Dialog messageBox, final float radius, final float height) throws IllegalArgumentException {
+		super(messageBox);
 		setRadius(radius);
 		setHeight(height);
 	}
@@ -46,7 +45,7 @@ public class Cylinder extends Shape {
 
 	@Override
 	public void render() {
-		JOptionPane.showMessageDialog(null, this.toString(), "Cylinder", JOptionPane.INFORMATION_MESSAGE);
+		getMessageBox().show(this.toString(), "Cylinder");
 	}
 	
 	@Override

@@ -1,6 +1,7 @@
 package org.cvtc.shapes.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.cvtc.shapes.Shape;
 import org.junit.Test;
