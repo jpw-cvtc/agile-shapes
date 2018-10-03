@@ -11,6 +11,10 @@ public class Cylinder extends Shape implements Renderer {
 		setHeight(height);
 	}
 
+	public Cylinder(Dialog dialog) {
+		super(dialog);
+	}
+
 	public float getRadius() {
 		return radius;
 	}

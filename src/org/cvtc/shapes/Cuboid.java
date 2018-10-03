@@ -13,6 +13,10 @@ public class Cuboid extends Shape implements Renderer {
 		setDepth(depth);
 	}
 	
+	public Cuboid(Dialog messageBox) {
+		super(messageBox);
+	}
+	
 	public float getWidth() {
 		return width;
 	}

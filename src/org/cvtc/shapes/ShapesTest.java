@@ -4,14 +4,17 @@ public class ShapesTest {
 
 	public static void main(String[] args) {
 		
-		Renderer cuboid = new Cuboid(new MessageBox(), 1, 2, 3);
-		Renderer cylinder = new Cylinder(new MessageBox(), 1, 2);
-		Renderer sphere = new Sphere(new MessageBox(), 1);
+		Dialog dialog = new MessageBox();
+		ShapeFactory factory = new ShapeFactory(dialog);
 		
+		Shape cuboid = factory.make(ShapeType.Cuboid);
 		cuboid.render();
-		cylinder.render();
-		sphere.render();
 		
+		Shape cylinder = factory.make(ShapeType.Cylinder);
+		cylinder.render();
+		
+		Shape sphere = factory.make(ShapeType.Sphere);
+		sphere.render();
 	}
 
 }

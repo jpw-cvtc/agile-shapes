@@ -9,6 +9,10 @@ public class Sphere extends Shape implements Renderer {
 		setRadius(radius);
 	}
 	
+	public Sphere(Dialog dialog) {
+		super(dialog);
+	}
+
 	public float getRadius() {
 		return radius;
 	}
